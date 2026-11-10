@@ -192,7 +192,7 @@ function closeLightbox() {
   lbImg.removeAttribute('src');
   lastFocus?.focus();
 }
-cards.forEach(card => $('.project-image', card).addEventListener('click', e => openLightbox(e.currentTarget, cards)));
+cards.forEach(card => $('.project-image', card)?.addEventListener('click', e => openLightbox(e.currentTarget, cards.filter(item => item.dataset.image))));
 const credCards = $$('.cred-card');
 credCards.forEach(card => card.addEventListener('click', e => openLightbox(e.currentTarget, credCards)));
 lbClose.addEventListener('click', closeLightbox);
